@@ -147,7 +147,7 @@ export class Snapshot extends Component {
             if(sys.os == "Android") {
                 buffer = this.flipImageY(this._buffer, width, height);
             }
-            native.saveImageData(this._buffer, width, height, filePath).then(() => {
+            native.saveImageData(buffer, width, height, filePath).then(() => {
                 if (this.onCaptureComplete) {
                     // 用于测试图片是否正确保存到本地设备路径下
                     assetManager.loadRemote<ImageAsset>(filePath, (err, imageAsset) => {
